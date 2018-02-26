@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Wheel/FortuneWheel/Scenes/FortuneWheelScene.unity
+  isLoaded: 1
+  isActive: 1

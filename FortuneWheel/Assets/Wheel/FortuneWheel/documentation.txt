@@ -1,0 +1,160 @@
+
+----------------------------------------------
+            Fortune Wheel PRO
+                Version 1.0
+           http://fw.webjema.com/
+          Support: fw@webjema.com
+----------------------------------------------
+
+Documentation of Fortune Wheel for Unity
+
+
+How to install
+--------------
+Add [Fortune Wheel] package to your Unity project.
+
+Add [DOTween] plugin to your Unity project (https://www.assetstore.unity3d.com/en/#!/content/27676)
+
+Add [JSON Object] plugin to your Unity project (https://www.assetstore.unity3d.com/en/#!/content/710)
+
+Open scene "FortuneWheel/Scenes/FortuneWheelScene.unity"
+
+
+Basic options
+-------------
+"StartPoint" gameobject in "FortuneWheelScene" has several parameters:
+
+Environment ?currently used for on/off debug logs. You can use it to setup different endpoints and settings.
+
+Wheel Data Mode ?setup how FortuneWheelController recieves init data and winner data (from client resources or from server).
+
+For testing server side data management there are testing endpoint for FortuneWheelController in Config.cs.
+
+Open "FortuneWheel/Scripts/GlobalClasses/Config.cs" to setup your own server endpoint.
+
+
+Customization
+-------------
+First of all you have to create list of items for Wheel. Example of JSON format for Wheel initialization is in "FortuneWheel/Resources/local_fortune_options.txt"
+
+JSON format description:
+"restore" - seconds left to Free Spin.
+
+"cost" - price of Paid Spin (has 2 currencies).
+
+"options" - list of items for Wheel. Not array to be able to re-order items and save id of each item.
+
+Id of each item is used to get correct winner.
+
+Wheel items art
+After list of items is in JSON - put correct sprites of items to "FortuneWheel/LinkedResources/FortuneWheelIcons/".
+
+Name them in following format "[type]_[name]".
+
+To update LinkedResourcesManager resources list, run command from the main menu "Builder->Update Linked Resources".
+
+LinkedResourcesManager is useful if you are going to use AssetBundles and provide some resources from them. If not - you can rewrite resources reading directly from "Resources" folder.
+
+Wheel art
+Check folder "FortuneWheel/Textures/fortune_wheel". You have to update sprites with your own.
+
+
+Project Controllers
+-------------------
+MainController - a core controller used to start app initializing.
+
+DialogsController - used to manage panels and popups. Show/Close methods available. Has queue for popups with options to not show next popups if some is open.
+
+LocalizationController - used to manage texts localization. Can manage languages and strings keys for them. Can change scene texts localization "on the fly" after current language is changed.
+
+PlayerController - takes care of player's data (name, money, inventory, etc).
+
+SoundEffectsController - provides methods to play effects and music management. Uses LinkedResourcesManager to read sound effects files.
+
+ServerController - used to communicate with server. Has methods to start requests and callbacks to read responce and handle errors.
+
+
+How to add it to existing project
+------------------------------
+Two options:
+1. Just add and use "FortuneWheelScene" in your own project.
+2. Add content of "FortuneWheelScene" to your project scene(s).
+
+
+Other
+-----
+For latest version of documentation, please, visit http://fw.webjema.com/
+
+----------------------------------------------
+            财富轮PRO
+                版本1.0
+           http://fw.webjema.com/
+          支持：fw@webjema.com
+----------------------------------------------
+
+幸运轮统一文献
+
+
+如何安装
+--------------
+将[财富轮]包添加到您的Unity项目中。
+
+将[DOTween]插件添加到Unity项目（https://www.assetstore.unity3d.com/en/#!/content/27676）
+
+将[JSON对象]插件添加到Unity项目（https://www.assetstore.unity3d.com/en/#!/content/710）
+
+开放场景“FortuneWheel / Scenes / FortuneWheelScene.unity”
+
+
+基本选项
+-------------
+“FortuneWheelScene”中的“StartPoint”gameobject有几个参数：
+
+环境？目前用于开/关调试日志。您可以使用它来设置不同的端点和设置。
+
+轮数据模式？设置FortuneWheelController如何收集初始数据和优胜者数据（从客户端资源或服务器）。
+
+对于测试服务器端数据管理，Config.cs中有FortuneWheelController的测试端点。
+
+打开“FortuneWheel / Scripts / GlobalClasses / Config.cs”来设置您自己的服务器端点。
+
+
+定制
+-------------
+首先，您必须创建Wheel的项目列表。车轮初始化的JSON格式示例在“FortuneWheel / Resources / local_fortune_options.txt”
+
+JSON格式说明：
+“恢复” - 自由旋转的秒数。
+
+“成本” - 付费旋转的价格（有2种货币）。
+
+“选项” - 轮的项目列表。没有数组能够重新排序项目并保存每个项目的ID。
+
+每个项目的ID用于获得正确的赢家。
+
+轮子艺术品
+在JSON项目列表中 - 将正确的项目精灵放入“FortuneWheel / LinkedResources / FortuneWheelIcons /”中。
+
+命名为“[type] _ [name]”。
+
+要更新LinkedResourcesManager资源列表，请从主菜单“Builder->更新链接资源”运行命令。
+
+如果要使用AssetBundles并从中提供一些资源，LinkedResourcesManager很有用。如果没有 - 您可以直接从“资源”文件夹重写资源读取。
+
+轮艺术
+检查文件夹“FortuneWheel / Textures / fortune_wheel”。你必须用自己的更新精灵。
+
+
+项目控制器
+-------------------
+MainController - 用于启动应用程序初始化的核心控制器。
+
+DialogsController - 用于管理面板和弹出窗口。显示/关闭方法可用。对于具有选项的弹出窗口排队，如果某些打开，则不显示下一个弹出窗口。
+
+LocalizationController - 用于管理文本本地化。可以为他们管理语言和字符串键。在当前语言改变后，可以随时更改场景文本本地化。
+
+PlayerController - 照顾玩家的数据（名称，钱，库存等）。
+
+SoundEffectsController - 提供播放效果和音乐管理的方法。使用LinkedResourcesManager读取声音效果文件。
+
+ServerController - 用于与服务器通信。有方法启动请求和回调来读取

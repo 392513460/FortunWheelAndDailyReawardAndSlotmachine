@@ -1,0 +1,23 @@
+{  
+   "data":{  
+      "panel.loading.text":"Loading...",
+
+      "panel.fortune.spinButton.free":"FREE\nSPIN",
+      "panel.fortune.spinButton.paid":"Spin\nfor",
+      "panel.fortune.menuButton":"to menu",
+
+	  "panel.fortune.timerTitle":"Next free spin in",
+	  "panel.fortune.timerH":"h",
+	  "panel.fortune.timerM":"m",
+	  "panel.fortune.timerS":"s",
+	  "dialog.fornuneWin.title":"YOU WON",
+	  "dialog.fornuneWin.ok":"Continue",
+	  "dialog.buyHardMoney.title":"BUY CRYSTALS",
+	  
+	  "dialog.close":"Close",
+
+	  "panel.loading.connectionproblem":"Connection problem...",
+
+	  "panel.mainmenu.fortuneButton":"FORTUNE WHEEL"
+   }
+}
